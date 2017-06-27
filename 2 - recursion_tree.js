@@ -49,4 +49,38 @@ function self_pol(n){
 console.log(self_pol(5));
 
 
-// Hamming numbers
+// recursive exponential number computation
+function self_exp(a, n){
+	if(n===0) return 1;
+	if(n===1) return a;
+
+	return a * self_exp(a, n-1);
+}
+
+console.log( self_exp(2, 4) );
+
+/****************************
+ * recursive tree traversal *
+ ****************************/
+
+var tree = {
+	val: "6",
+	leftNode: {
+		val: "4",
+		leftNode: {val:"1"},
+		rightNode: {val:"2"}
+	},
+	rightNode: {
+		val: "5",
+		leftNode: {val: "3"}
+	}
+}
+
+// node [value, [left, right]]
+function traverse(node) {
+	console.log("root: " + node.val);
+	if(node.leftNode) console.log("left: " + traverse(node.leftNode));
+	if(node.rightNode) console.log("right: " + traverse(node.rightNode));
+}
+
+console.log( traverse(tree) );
