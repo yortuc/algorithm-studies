@@ -1,11 +1,11 @@
 /*
-	Write a function that takes the derivative of the given polynominal
+	Write a function that takes the derivative of the given polynomial
 
 	source: https://www.youtube.com/watch?v=2cf9xo1S134
 */	
 
 /*
-	How to represent a polynominal?
+	How to represent a polynomial?
 
 	1. approach : use an array
 	[2, 3, 5] -> 5x^2 + 3x + 2
