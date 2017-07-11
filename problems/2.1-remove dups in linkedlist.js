@@ -27,23 +27,9 @@ function removeDups(head) {
 
 // without using a dicrionary
 function removeDups2(head){
-	var iterator = head;
-	var runner = head;
-
-	while(iterator) {		// take element
-		while(runner) {		// compare previous items
-
-			if(runner === iterator) break;
-
-			if(iterator.val === runner.val) {
-
-			}
-
-			runner = runner.next;
-		}        
-
-		iterator = iterator.next;
-	}
+	 //
+	 // ???
+	 // 
 }
 
 const log = (head) => {
