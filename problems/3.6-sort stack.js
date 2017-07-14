@@ -18,10 +18,8 @@ function sortStack(s1) {
 		if(el2 === null){	// el1 is the last elm in s1
 			s2.push(el1);
 
-			let s2_elm = s2.pop();
-			while(s2_elm){
-				s1.push(s2_elm);
-				s2_elm = s2.pop();
+			while(s2.length>0){
+				s1.push(s2.pop());
 			}
 		}
 		else{
