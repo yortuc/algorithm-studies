@@ -61,6 +61,25 @@ function evaluateOperator(op, t1, t2) {
 	}
 }
 
+/*
+Postfix evaluation
+	1. While there are input tokens left
+	    o Read the next token from input.
+	    o If the token is a value
+	       + Push it onto the stack.
+	    o Otherwise, the token is an operator 
+	      (operator here includes both operators, and functions).
+	       * It is known a priori that the operator takes n arguments.
+	       * If there are fewer than n values on the stack
+	        (Error) The user has not input sufficient values in the expression.
+	       * Else, Pop the top n values from the stack.
+	       * Evaluate the operator, with the values as arguments.
+	       * Push the returned results, if any, back onto the stack.
+	2. If there is only one value in the stack
+	    o That value is the result of the calculation.
+	3. If there are more values in the stack
+	    o (Error)  The user input has too many values.
+*/
 function evaluatePostfix(pst) {
 	var stack = [];
 
