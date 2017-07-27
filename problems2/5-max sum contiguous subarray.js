@@ -8,23 +8,29 @@
 */
 
 function mss(arr, start, end){
-	console.log(arr.slice(start, end));
 	if(end-start === 1) { // base case
 		return arr[0];	
 	}
 
 	let midIndex = start + Math.floor((end-start)/2);
 
-	console.log(midIndex);
-
 	let leftMss = mss(arr, start, midIndex);
 	let rightMss = mss(arr, midIndex, end);
-	let leftSum = 0;
-	let rightSum = 0;
+	let leftSum = Number.MIN_VALUE;
+	let rightSum = Number.MIN_VALUE;
 
+	let sum = 0;
 
-	for(let i=start; i<midIndex; i++) leftSum += arr[i];
-	for(let j=midIndex; j<end; j++) rightSum += arr[j];
+	for(let i=start; i<midIndex; i++) {
+		sum += arr[i];
+		leftSum = Math.max(leftSum, sum);
+	}
+
+	sum = 0;
+	for(let j=midIndex; j<end; j++) {
+		sum += arr[j];
+		rightSum = Math.max(rightSum, sum);
+	}
 
 	let ans = Math.max(leftMss, rightMss);
 	return Math.max(rightSum + leftSum, ans);
